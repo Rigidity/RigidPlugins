@@ -1,0 +1,23 @@
+{
+  "name": "rigidplugins",
+  "version": "1.0.0",
+  "description": "An easy to use NodeJS plugin system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test provided.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rigidity/RigidPlugins.git"
+  },
+  "keywords": ["plugins", "utility", "helper", "wrapper"],
+  "author": "Rigidity",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rigidity/RigidPlugins/issues"
+  },
+  "homepage": "https://github.com/Rigidity/RigidPlugins#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  }
+}

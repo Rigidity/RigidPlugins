@@ -4,7 +4,7 @@
   "description": "An easy to use NodeJS plugin system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test provided.\""
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

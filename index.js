@@ -1,4 +1,4 @@
-module.exports = () => {
+const res = () => {
 
 	let fs = require('fs-extra');
 
@@ -145,3 +145,15 @@ module.exports = () => {
 	return proxy;
 
 };
+
+res.all = (plugins, directory) => {
+	const fs = require('fs-extra');
+	const path = require('path');
+	fs.readdirSync(directory).forEach(file => {
+		if (!file.endsWith('.js')) return;
+		const name = file.slice(0, -3);
+		plugins[name] = (directory.startsWith('./') ? './' : '') + path.join(directory, file);
+	});
+};
+
+module.exports = res;

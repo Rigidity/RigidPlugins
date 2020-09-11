@@ -1,6 +1,7 @@
 const res = () => {
 
 	let fs = require('fs-extra');
+	const path = require('path');
 
 	function evaluate(text, scope) {
 		return function() {
@@ -63,7 +64,7 @@ const res = () => {
 					throw new Error(`There is already a plugin named ${name}.`);
 				}
 				disable(name);
-				const loc = require.resolve(action);
+				const loc = path.resolve(action);
 				files[loc] = fetch(loc);
 				plugins[name] = loc;
 				enable(name);
@@ -152,7 +153,7 @@ res.all = (plugins, directory) => {
 	fs.readdirSync(directory).forEach(file => {
 		if (!file.endsWith('.js')) return;
 		const name = file.slice(0, -3);
-		plugins[name] = (directory.startsWith('./') ? './' : '') + path.join(directory, file);
+		plugins[name] = './' + path.join(directory, file);
 	});
 };
 

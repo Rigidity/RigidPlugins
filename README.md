@@ -6,7 +6,7 @@
 const plugins = require('rigidplugins');
 const $ = plugins();
 
-$.console = 'rigidplugins/builtin/logger';
+$.console = require.resolve('rigidplugins/builtin/logger');
 plugins.all($, './my/custom/plugins');
 
 $.console.info('Successfully included the logger plugin!');
